@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css?family=Assistant:200,400,600|Noto+Sans:400,400i,700|Oswald:300,400,500|PT+Sans+Caption&display=swap');
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.cp {
+    display: block;
+}
+.sp {
+    display: none;
+}
+
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    font-family: 'Assistant', 'sans-serif';
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+.fullscreenmenu input {
+    display: none;
+}
+
+.all_container .fullscreenmenu {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+}
+
+.all_container .fullscreenmenu .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.all_container .fullscreenmenu .menu label {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 1000px;
+    height: 1000px;
+    cursor: pointer;
+    background-size: 100%;
+}
+
+.fullscreenmenu .menu .menu_contents {
+    position: relative;
+    top: 20%;
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.fullscreenmenu .menu ul {
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+.fullscreenmenu .menu ul li,
+.fullscreenmenu .menu ul li a {
+    transition: all 0.3s ease;
+}
+
+.fullscreenmenu .menu li a {
+    display: block;
+    padding: 10px 0;
+}
+
+.fullscreenmenu .menu li a:hover {
+    font-size: 30px;
+    background-color: rgba(255, 255, 255, 0.80);
+}
+
+.fullscreenmenu .menu li:hover {
+    /* background: yellow; */
+}
+
+.fullscreenmenu .menuEffects {
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+    opacity: 0;
+}
+.fullscreenmenu .menuEffects ul {
+    transition: all 0.5s;
+    transform: translateY(0%);
+}
+
+.fullscreenmenu #menuToggle:checked ~ .menuEffects {
+    visibility: visible;
+    transition: opacity 0.5s;
+    opacity: 1;
+}
+
+.fullscreenmenu #menuToggle:checked ~ .menuEffects ul {
+    opacity: 1;
+}
+
+.fullscreenmenu #menuToggle:checked ~ .hamburger .open {
+    background-color: transparent;
+}
+
+.fullscreenmenu #menuToggle:checked ~ .hamburger .open:before {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    content: '';
+    transform: rotate(45deg);
+}
+.fullscreenmenu #menuToggle:checked ~ .hamburger .open:after {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    content: '';
+    transform: rotate(-45deg);
+}
+.fullscreenmenu #menuToggle:checked ~ .hamburger .menu_home:before,
+.fullscreenmenu #menuToggle:checked ~ .hamburger .menu_home:after {
+    background-color: #ffffff;
+}
+.fullscreenmenu #menuToggle:checked ~ .hamburger .menu_other:before,
+.fullscreenmenu #menuToggle:checked ~ .hamburger .menu_other:after {
+    background-color: #000000;
+}
+
+.fullscreenmenu #menuToggle:not(:checked) ~ .menuEffects ul {
+    transform: translateY(-30%);
+}
+
+.fullscreenmenu .open,
+.fullscreenmenu .open:before,
+.fullscreenmenu .open:after {
+    position: relative;
+    display: block;
+    width: 35px;
+    height: 4px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+.fullscreenmenu .menu_home,
+.fullscreenmenu .menu_home:before,
+.fullscreenmenu .menu_home:after {
+    background-color: #ffffff;
+}
+.fullscreenmenu .menu_other,
+.fullscreenmenu .menu_other:before,
+.fullscreenmenu .menu_other:after {
+    background-color: #000000;
+}
+
+.fullscreenmenu .open {
+    cursor: pointer;
+}
+
+.fullscreenmenu .menu_home {
+    top: 10px;
+}
+.fullscreenmenu .menu_other {
+    top: 20px;
+}
+
+.fullscreenmenu .open:before {
+    top: -10px;
+    content: '';
+    transform: rotate(0deg);
+}
+.fullscreenmenu .open:after {
+    top: 6px;
+    content: '';
+}
+
+.fullscreenmenu .hamburger:hover .open:before {
+    top: -12px;
+}
+.fullscreenmenu .hamburger:hover .open:after {
+    top: 8px;
+}
+
+.fullscreenmenu .hamburger {
+    position: relative;
+    top: 5px;
+    right: 10px;
+    display: block;
+    width: 50px;
+    height: 50px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+
+.footer {
+    width: 100%;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.footer p {
+    margin: 0;
+}
+.footer_privacy {
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.54);
+    margin: 5px 0;
+    text-align: center;
+}
+.models  {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+@media screen and (max-width: 900px) {
+    .fullscreenmenu .menu_home,
+    .fullscreenmenu .menu_home:before,
+    .fullscreenmenu .menu_home:after {
+        background-color: rgba(0, 0, 0, 0.26);
+    }
+
+    .fullscreenmenu #menuToggle:checked ~ .hamburger .menu_home:after,
+    .fullscreenmenu #menuToggle:checked ~ .hamburger .menu_home:before {
+        background-color: rgba(0, 0, 0, 0.26);
+    }
+    .cp {
+        display: none;
+    }
+    .sp {
+        display: block;
+    }
+}

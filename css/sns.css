@@ -1,0 +1,15 @@
+.sns_logos {
+    width: 200px;
+    margin: 50px auto 0 auto;
+    text-align: center;
+}
+
+.sns_logos .logo {
+    display: inline-block;
+}
+
+.sns_logos .logo img {
+    width: 40px;
+    height: auto;
+    margin: 0 10px;
+}

@@ -1,0 +1,192 @@
+.all_container {
+    position: relative;
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+body,
+.all_container {
+    flex-direction: column;
+    min-height: 100vh;
+}
+footer {
+    margin-top: auto;
+}
+#content_message {
+    font-size: 16px;
+    font-weight: 200;
+    margin-bottom: 3px;
+}
+
+.gallery_container{
+    display: grid;
+    grid-template-rows: repeat(2, 50%);
+    grid-template-columns: repeat(2, 50%);
+    justify-content: center;
+}
+.gallery_container .items {
+    margin: 5px 5px 20px 5px;
+}
+.gallery_container .card {
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+    border-radius: 1px;
+    -webkit-box-shadow: 0 3px 7px -3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 7px -3px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s ease;
+}
+.gallery_container .card:hover {
+    -webkit-box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.6);
+    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.6);
+}
+#card_portrait {
+    background: url(../img/gallery/portrait.jpg) bottom/cover no-repeat;
+}
+#card_landscape {
+    background: url(../img/gallery/landscape.jpg) bottom/cover no-repeat;
+}
+#card_dailyscene {
+    background: url(../img/gallery/dailyscene.jpg) bottom/cover no-repeat;
+}
+#card_client {
+    background: url(../img/gallery/client.jpg) bottom/cover no-repeat;
+}
+
+.gallery_container .items .card h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    transition: all 0.3s ease;
+    padding: 0;
+    margin: 0;
+    color: transparent;
+}
+.gallery_container .items .card:hover h2 {
+    color: #ffffff;
+}
+.gallery_container .items #card_client:hover h2 {
+    color: rgba(0, 0, 0, 0.75);
+}
+.gallery_container .items .card a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#preset_title {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.preset_container{
+    display: grid;
+    grid-template-rows: repeat(1, 100%);
+    grid-template-columns: repeat(2, 50%);
+    justify-content: center;
+}
+.preset_container .nomargin {
+    margin: 5px;
+}
+.preset_container .items p {
+    display: inline-block;
+}
+.preset_container .items {
+    margin: 5px 5px 20px 5px;
+}
+
+.preset_container_sp .items p {
+    margin-top: 5px;
+}
+
+.contents_description p {
+    text-align: left;
+    margin-top: 5px;
+}
+.description_title {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 0;
+}
+.setphoto_container {
+    width: 100%;
+    display: grid;
+    grid-template-rows: repeat(2, 300px);
+    grid-template-columns: repeat(3, 33.33%);
+    justify-content: center;
+    margin-top: 50px;
+}
+.setphoto_container .box {
+    margin: 0;
+    overflow: hidden;
+    object-fit: cover;
+    position: relative;
+}
+.setphoto_container .box img {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+.preset_price {
+    margin: 100px 0;
+}
+.preset_price p {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+
+.privacy_policy {
+    text-align: left;
+}
+.privacy_policy h2 {
+    text-align: center;
+    margin-top: 50px;
+}
+#caution {
+    font-size: 0.8em;
+    color: rgba(0, 0, 0, 0.7);
+}
+@media screen and (max-width: 800px) {
+    .all_container {
+        width: 100%;
+    }
+    .all_container iframe {
+        width: 100%;
+    }
+    .gallery_container {
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: repeat(1, 90%);
+    }
+    .preset_container {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 90%);
+    }
+    .preset_container_sp {
+        grid-template-rows: repeat(1, 1fr);
+        grid-template-columns: repeat(1, 90%);
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .setphoto_container {
+        grid-template-rows: repeat(3, 300px);
+        grid-template-columns: repeat(2, 50%);
+    }
+    .setphoto_container .box img {
+        height: 100%;
+    }
+}
